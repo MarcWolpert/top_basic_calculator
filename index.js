@@ -1,17 +1,18 @@
+const precision=2;
 function add(addend1,addend2){
-    return Math.round(((addend1+addend2)*100)) / 100;
+    return Math.round(((addend1+addend2)*10**precision)) / 100;
 }
 
 function multiply(factor1,factor2){
-    return Math.round(factor1*factor2*100) / 100;
+    return Math.round(factor1*factor2*10**precision) / 100;
 }
 
 function subtract(minuend,subtrahend){
-    return Math.round((minuend-subtrahend)*100) / 100;
+    return Math.round((minuend-subtrahend)*10**precision) / 100;
 }
 
 function divide(dividend,divisor){
-    return Math.round(dividend/divisor*100) / 100;
+    return Math.round(dividend/divisor*10**precision) / 100;
 }
 
 function parse(input){
@@ -24,7 +25,6 @@ function operate(inputs){
     const num1=Number(inputs[0].trim());
     const num2=Number(inputs[1].trim());
     const operator=inputs[2];
-
     switch (operator){
         case '+':
             return add(num1,num2);
@@ -52,8 +52,8 @@ body.style.display = 'flex';
 body.style.flexDirection = 'column';
 body.style.justifyContent = 'center';
 body.style.alignItems = 'center';
-body.style.height = '100vh'; // Ensures full vertical height
-body.style.margin = '0'; // Removes default margins
+body.style.height = '100vh'; 
+body.style.margin = '0'; 
 
 const buttonText=[
     'AC','+/-','%','/',
@@ -73,11 +73,7 @@ rows.style['align-items']='center';
 const baseWidth=200;
 let row=0;
 for (let i=0; i<6; i++){
-    row=document.querySelector(`#row${i+1}`);
-    //row.style["display"]='flex';
-    // row.style["flex-direction"]='row';
-    // row.style['justify-content']='center';
-    // row.style['align-items']='center';
+    row=document.querySelector(`#row${i+1}`);    
     if (i===0){
         const p=document.createElement('p');
         p.style.height='160px';
