@@ -61,8 +61,13 @@ const calculatorContainer = document.createElement('div');
 calculatorContainer.classList.add('calculator');
 
 // Set the calculator size to take up 1/6 of the viewport area
-calculatorContainer.style.width = '40.82vw'; // Approximately sqrt(1/6) * 100vw
-calculatorContainer.style.height = '40.82vh'; // Approximately sqrt(1/6) * 100vh
+const displayNumerator=6.5;
+const displayDenominator=10;
+const displayPercentage=Math.round(
+    Math.sqrt(displayNumerator/displayDenominator)*10**4)/(10**2);
+console.log(displayPercentage);
+calculatorContainer.style.width = `${displayPercentage}vw`; // Approximately sqrt(1/6) * 100vw
+calculatorContainer.style.height = `${displayPercentage}vh`; // Approximately sqrt(1/6) * 100vh
 
 // Add padding and box-sizing to the calculator container
 calculatorContainer.style.padding = '30px';
