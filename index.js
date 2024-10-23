@@ -123,6 +123,7 @@ displayElement.style.padding = '0';
 displayElement.style.width = '100%';
 displayElement.style.overflow = 'hidden';
 displayElement.style.wordWrap = 'break-word';
+displayElement.style.borderRadius='20px';
 
 displayDiv.appendChild(displayElement);
 calculatorContainer.appendChild(displayDiv);
